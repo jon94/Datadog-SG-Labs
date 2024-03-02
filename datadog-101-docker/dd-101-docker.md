@@ -86,8 +86,11 @@ chmod +x create_monitor.sh
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/4fa64f28-0c21-4578-9029-94abc45157f2)
 
 **Task 2: Edit the created monitor to shorten the evaluation time**
+![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/ae03c3f0-265f-478b-b683-18f05c4769eb)
 
 **Task 3: Based on the threshold monitor, create a similar one for simulate_error service**
+- 2 methods
+ 
 
 ### 9. Generate load to the application and observe traces
 - Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
