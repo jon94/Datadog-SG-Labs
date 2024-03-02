@@ -83,6 +83,8 @@ find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
 chmod +x create_monitor.sh
 ./create_monitor.sh
 ```
+![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/4fa64f28-0c21-4578-9029-94abc45157f2)
+
 **Task 2: Edit the created monitor to shorten the evaluation time**
 
 **Task 3: Based on the threshold monitor, create a similar one for simulate_error service**
