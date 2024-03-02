@@ -1,0 +1,5 @@
+ddtrace==2.6.5
+gunicorn==20.1.0
+datadog==0.48.0
+Flask==2.0.2
+werkzeug==2.0.2
