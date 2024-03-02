@@ -92,9 +92,9 @@ chmod +x create_monitor.sh
 - 2 methods
   - From Service Catalogue
     <img width="1329" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/511c7a9a-5145-443a-af4e-278a12d4db10">
-  - From Monitors  
- 
- 
+  - From Monitors
+    <img width="1352" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/7f718644-bfc8-4683-93fb-2819bc36860a">
+    <img width="1351" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/680d4621-a854-4fbd-8f2d-70a251cd52ba">
 
 ### 9. Generate load to the application and observe traces
 - Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
