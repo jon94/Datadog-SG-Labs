@@ -10,7 +10,7 @@ services:
     environment:
       DD_TRACE_AGENT_HOSTNAME: "datadog-agent"
       DD_TRACE_AGENT_PORT: "8126"
-      DD_SERVICE: "flask"
+      DD_SERVICE: "flask-dd-lab"
       DD_ENV: "dd-sg-lab"
       DD_VERSION: "1.0.0"
       DD_RUNTIME_METRICS_ENABLED: "true"
