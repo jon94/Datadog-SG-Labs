@@ -20,13 +20,10 @@ monitor_payload = {
 		"thresholds": {
 			"critical": 0.05
 		},
-		"notify_audit": false,
-		"include_tags": false,
-		"notify_no_data": false,
-		"silenced": {}
-	},
-	"priority": null,
-	"restricted_roles": null
+		"notify_audit": False,
+		"include_tags": False,
+		"threshold_windows": {}
+	}
 }
 url = 'https://api.datadoghq.com/api/v1/monitor'
 response = requests.post(url, headers=headers, data=json.dumps(monitor_payload))
