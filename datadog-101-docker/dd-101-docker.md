@@ -90,6 +90,10 @@ chmod +x create_monitor.sh
 
 **Task 3: Based on the threshold monitor, create a similar one for simulate_error service**
 - 2 methods
+  - From Service Catalogue
+    <img width="1329" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/511c7a9a-5145-443a-af4e-278a12d4db10">
+  - From Monitors  
+ 
  
 
 ### 9. Generate load to the application and observe traces
