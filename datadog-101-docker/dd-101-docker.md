@@ -30,6 +30,7 @@
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/b11651c4-aec4-4cd4-9672-8d3e99cb8e2c)
 
 ### 4. Clone this repo and change directory
+#### Checkpoint: Start from here if lab times out.
 ```
 cd
 
@@ -38,4 +39,11 @@ git clone https://github.com/jon94/Datadog-SG-Labs.git
 cd Datadog-SG-Labs/datadog-101-docker
 ```
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/fdbf45c0-e269-4440-b323-ea2b17e0c3e4)
+
+### 5. Using API Key from step (2)
+![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/7c81442b-3379-417d-892d-56e24a8e0e73)
+
+![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/e64a69f5-2209-49de-96aa-d2d8178bb35e)
+
+![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/2bc2f953-ef2d-4200-a068-4e2afeece804)
 
