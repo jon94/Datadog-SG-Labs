@@ -6,6 +6,6 @@ cd create_monitor
 # Iterate through all Python files in the directory
 for file in *.py; do
     echo "Running $file"
-    python "$file"
+    python3 "$file"
     echo "Completed $file"
 done
