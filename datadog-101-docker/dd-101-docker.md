@@ -152,6 +152,11 @@ chmod +x run_script.sh
 
 **Configure Webhook Integration**
 
+```
+To mute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/mute?api_key=&application_key=
+To unmute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/unmute?api_key=&application_key=
+```
+
 [Grant the correct application key scope] (https://docs.datadoghq.com/account_management/api-app-keys/#scope-application-keys)
 <img width="996" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/219b7a1e-67c8-455c-8912-7ec90a9b35fc">
 
