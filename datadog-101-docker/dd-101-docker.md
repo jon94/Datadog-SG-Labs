@@ -251,6 +251,10 @@ To unmute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/unmute?a
 
 [Hint] (https://docs.datadoghq.com/monitors/downtimes/)
 
+In order to use the api, you have to give the correct scope on your application key (monitor_downtime).
+
+<img width="984" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/d6f827c0-84c3-4399-ab05-bf2e1510ede8">
+
 ```
 https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=
 ```
