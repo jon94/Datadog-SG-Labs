@@ -156,6 +156,18 @@ chmod +x create_monitor.sh
     <img width="1351" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/680d4621-a854-4fbd-8f2d-70a251cd52ba">
     
 </details>
+
+**Task 4: Instead of creating a monitor based on metrics, create a monitor using APM Trace Analytics. This monitor should monitor service:flask-dd-lab in env:dd-sg-lab. Trigger an Alert when the count of error spans is > 20.**
+
+[Hint](https://app.datadoghq.com/monitors/manage?order=desc) You should see 2 monitors created. Refer to one of them as an example.
+
+<details>
+<summary>Click to toggle for more info</summary>
+  
+<img width="1332" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/a910810c-df73-47b5-9ba8-5171bbfeb988">
+    
+</details>
+
 </details>
 
 ### 9. Generate load to the application and observe traces
@@ -175,7 +187,10 @@ chmod +x run_script.sh
 </details>
 
 ### Monitor Deep Dive
-#### Category: Monitors
+
+<details>
+<summary>Click to toggle for `Tasks in Monitor Deep Dive`</summary>
+
 **Task 1: How do you alert different members based on the status of the monitor?**
 
 [Hint] (https://docs.datadoghq.com/monitors/notify/variables/?tab=is_alert#conditional-variables)
@@ -228,3 +243,6 @@ To unmute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/unmute?a
 </details>
 
 **Task 3: You learnt how to mute individual monitors, what if the downstream service has many monitors? How can you mute all monitors belonging to service:simulate_error?**
+
+
+</details>
