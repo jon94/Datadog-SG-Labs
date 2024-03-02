@@ -110,6 +110,8 @@ chmod +x run_script.sh
 
 ### BONUS
 #### Category: Monitors
-Task 1: How do you alert different members based on the status of the monitor?
+**Task 1: How do you alert different members based on the status of the monitor?**
+[Hint] (https://docs.datadoghq.com/monitors/notify/variables/?tab=is_alert#conditional-variables)
+<img width="1321" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/5173e271-afbe-4b96-b7f0-448ddba7d3e1">
 
 Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?
