@@ -114,16 +114,19 @@ chmod +x run_script.sh
 [Hint] (https://docs.datadoghq.com/monitors/notify/variables/?tab=is_alert#conditional-variables)
 <details>
 <summary>Click to toggle contents of `Task 1`</summary>
-<img width="1321" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/5173e271-afbe-4b96-b7f0-448ddba7d3e1">
-```
-{{#is_alert}}
-high error rate on {{service.name}} on {{env.name}} @<email>
-{{/is_alert}} 
+  
+   ```
+  {{#is_alert}}
+  high error rate on {{service.name}} on {{env.name}} @<email>
+  {{/is_alert}} 
+  
+  {{#is_alert_recovery}}
+  recovered. @<email>
+  {{/is_alert_recovery}}
+  ```
 
-{{#is_recovery}}
-recovered. @<email>
-{{/is_recovery}}
-```
+<img width="1321" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/5173e271-afbe-4b96-b7f0-448ddba7d3e1">
+
 </details>
 
-Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?
+**Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?**
