@@ -5,6 +5,7 @@
   - Sign Up here (https://learn.datadoghq.com/users/sign_up)
 - Enroll for "The Agent on Docker" course (https://learn.datadoghq.com/courses/agent-on-docker)
 - Note: The lab times out after 10 minutes of inactivity.
+- Each lab session lasts for 1 hour
 
 ## Objectives
 - After running this lab, you should be familiar with the following:
