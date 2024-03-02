@@ -32,7 +32,7 @@
 ### 4. Clone this repo and change directory
 #### Checkpoint: Start from here if lab times out.
 ```
-cd
+root@agent-docker-lab-host:~/lab cd
 
 git clone https://github.com/jon94/Datadog-SG-Labs.git
 
@@ -49,11 +49,11 @@ cd Datadog-SG-Labs/datadog-101-docker
 
 ### 6. Start the containers
 ```
-docker compose up -d --force-recreate --no-deps --build
+root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker# docker compose up -d --force-recreate --no-deps --build
 ```
 - Check that the containers are up and running
 ```
-docker ps -a
+root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker# docker ps -a
 ```
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/54d1442f-e9a6-4521-8161-fcdbcd9b6a97)
 
@@ -62,4 +62,13 @@ docker ps -a
 <img width="1346" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/f03a67e4-a479-489e-8a72-eefcd3db0617">
 <img width="1040" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/48cd289a-74e6-45c3-9f27-f9c0ddf9d8d9">
 
+### 8. Create Monitors on Datadog
 
+### 9. Generate load to the application and observe traces
+- There are 2 endpoints.
+  - HelloWorld >> localhost:5000/hello
+  - Simulate Error >> localhost:5000/simulate_error
+```
+root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker# chmod +x run_script.sh 
+root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker# ./run_script.sh
+```
