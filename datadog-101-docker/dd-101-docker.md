@@ -125,4 +125,5 @@ recovered. @<email>
 {{/is_recovery}}
 ```
 </details>
+
 Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?
