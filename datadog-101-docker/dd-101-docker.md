@@ -57,3 +57,8 @@ docker ps -a
 ```
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/54d1442f-e9a6-4521-8161-fcdbcd9b6a97)
 
+### 7. Explore Infra using Live Containers on Datadog
+- [Live Containers](https://app.datadoghq.com/containers?query=short_image%3A%28agent%20OR%20datadog-101-docker-web%29&overview-na-groups=false&selectedTopGraph=timeseries)
+<img width="1346" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/f03a67e4-a479-489e-8a72-eefcd3db0617">
+<img width="1040" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/a9cfb39f-2b33-465e-a588-227bf634c319">
+
