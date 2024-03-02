@@ -6,7 +6,7 @@ app_key = 'YOUR_APP_KEY'
 
 headers = {
     'Content-Type': 'application/json',
-    'DD-API-KEY': api_key
+    'DD-API-KEY': api_key,
     'DD-APPLICATION-KEY': app_key
 }
 
