@@ -4,6 +4,7 @@
 - Account with learn.datadoghq.com
   - Sign Up here (https://learn.datadoghq.com/users/sign_up)
 - Enroll for "The Agent on Docker" course (https://learn.datadoghq.com/courses/agent-on-docker)
+- Note: The lab times out after 10 minutes of inactivity.
 
 ## Objectives
 - After running this lab, you should be familiar with the following:
@@ -36,3 +37,5 @@ git clone https://github.com/jon94/Datadog-SG-Labs.git
 
 cd Datadog-SG-Labs/datadog-101-docker
 ```
+![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/fdbf45c0-e269-4440-b323-ea2b17e0c3e4)
+
