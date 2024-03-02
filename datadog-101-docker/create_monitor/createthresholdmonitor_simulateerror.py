@@ -11,7 +11,7 @@ headers = {
 }
 
 monitor_payload = {
-	"name": "Service simulate_error has a high error rate on env:dd-sg-la",
+	"name": "Service simulate_error has a high error rate on env:dd-sg-lab",
 	"type": "query alert",
 	"query": "sum(last_10m):(sum:trace.app.simulate_error.errors{env:dd-sg-lab, service:simulate_error}.as_count() / sum:trace.app.simulate_error.hits{env:dd-sg-lab, service:simulate_error}.as_count()) > 0.05",
 	"message": "`simulate_error` error rate is too high.",
