@@ -125,8 +125,6 @@ chmod +x run_script.sh
   {{/is_alert_recovery}}
   ```
 
-<img width="1321" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/5173e271-afbe-4b96-b7f0-448ddba7d3e1">
-
 </details>
 
 **Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?**
