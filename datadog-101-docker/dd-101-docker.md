@@ -24,10 +24,20 @@
 
 ## How to use this?
 ### 1. Start the Lab
+<details>
+<summary>Click to toggle image</summary>
+  
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/81283ffc-d20a-4dec-95db-10821b008675)
 
+</details>
+
 ### 2. Obtain the credentials
+<details>
+<summary>Click to toggle image</summary>
+  
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/d2f176d0-8f85-409b-9e77-70d09781ad35)
+
+</details>
 
 ### 3. Log into app.datadoghq.com using creds obtained from step (1)
 <img width="1501" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/7518ae2b-18c0-40dc-a535-0dbe3a7c19fd">
