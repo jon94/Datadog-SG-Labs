@@ -256,6 +256,16 @@ In order to use the api, you have to give the correct scope on your application 
 <img width="984" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/d6f827c0-84c3-4399-ab05-bf2e1510ede8">
 
 ```
+{{#is_alert}} 
+high error rate on {{service.name}} on {{env.name}}. Proceeding to mute all alerts related to service:simulate_error @webhook-mute-ALL-simulateerror 
+{{/is_alert}}
+
+{{#is_alert_recovery}} 
+alert recovered. Proceeding to unmute all alerts related to service:simulate_error @webhook-unmute-ALL-simulateerror 
+{{/is_alert_recovery}}
+```
+
+```
 https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=
 ```
 
@@ -270,7 +280,7 @@ https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=
           "env:dd-sg-lab"
         ]
       },
-      "scope": "test:mute_all_simulate_error",
+      "scope": "*",
       "schedule": {
         "start": null
       }
@@ -279,8 +289,7 @@ https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=
   }
 }
 ```
-
-<img width="997" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/c5264bc7-6770-41cf-ba5f-7c8d2126b24f">
+<img width="986" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/14da1508-43e1-4267-80d9-8854f24427cf">
 
 </details>
 
