@@ -82,6 +82,9 @@ find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
 chmod +x create_monitor.sh
 ./create_monitor.sh
 ```
+**Task 2: Edit the created monitor to shorten the evaluation time**
+
+**Task 3: Based on the threshold monitor, create a similar one for simulate_error service**
 
 ### 9. Generate load to the application and observe traces
 - Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
