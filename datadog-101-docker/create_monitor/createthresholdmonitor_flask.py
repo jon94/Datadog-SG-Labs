@@ -33,6 +33,6 @@ url = 'https://api.datadoghq.com/api/v1/monitor'
 response = requests.post(url, headers=headers, data=json.dumps(monitor_payload))
 
 if response.status_code == 200:
-    print("Monitor created successfully!")
+    print("Monitor flask created successfully!")
 else:
     print(f"Failed to create monitor. Status code: {response.status_code}, Response: {response.text}")
