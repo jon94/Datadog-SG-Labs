@@ -193,9 +193,10 @@ chmod +x run_script.sh
 
 **Task 1: How do you alert different members based on the status of the monitor?**
 
-[Hint] (https://docs.datadoghq.com/monitors/notify/variables/?tab=is_alert#conditional-variables)
 <details>
 <summary>Click to toggle for `Task 1`</summary>
+
+[Hint] (https://docs.datadoghq.com/monitors/notify/variables/?tab=is_alert#conditional-variables)
   
    ```
   {{#is_alert}}
@@ -211,10 +212,11 @@ chmod +x run_script.sh
 
 **Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors such that when flask-dd-labs has an alert, simulate_errors service monitor will not be called?**
 
-[Hint] (https://docs.datadoghq.com/monitors/guide/create-monitor-dependencies/)
-- Follow along the idea in the document above. The endpoints in the documents are outdated. But you can use docs on [API Reference] (https://docs.datadoghq.com/api/latest/#api-reference)
 <details>
 <summary>Click to toggle for `Task 2`</summary>
+
+[Hint] (https://docs.datadoghq.com/monitors/guide/create-monitor-dependencies/)
+- Follow along the idea in the document above. The endpoints in the documents are outdated. But you can use docs on [API Reference] (https://docs.datadoghq.com/api/latest/#api-reference)
   
   ```
   {{#is_alert}} 
@@ -244,5 +246,38 @@ To unmute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/unmute?a
 
 **Task 3: You learnt how to mute individual monitors, what if the downstream service has many monitors? How can you mute all monitors belonging to service:simulate_error?**
 
+<details>
+<summary>Click to toggle for `Task 3`</summary>
+
+[Hint] (https://docs.datadoghq.com/monitors/downtimes/)
+
+```
+https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=
+```
+
+```
+{
+  "data": {
+    "attributes": {
+      "message": "mute all service:simulate_error",
+      "monitor_identifier": {
+        "monitor_tags": [
+          "service:simulate_error",
+          "env:dd-sg-lab"
+        ]
+      },
+      "scope": "test:mute_all_simulate_error",
+      "schedule": {
+        "start": null
+      }
+    },
+    "type": "downtime"
+  }
+}
+```
+
+<img width="997" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/c5264bc7-6770-41cf-ba5f-7c8d2126b24f">
+
+</details>
 
 </details>
