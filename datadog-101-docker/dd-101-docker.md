@@ -27,3 +27,12 @@
 - If you are having issue logging in, please click on "Help" and navigate to "My training credentials don't work".
 
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/b11651c4-aec4-4cd4-9672-8d3e99cb8e2c)
+
+### 4. Clone this repo and change directory
+```
+cd
+
+git clone https://github.com/jon94/Datadog-SG-Labs.git
+
+cd Datadog-SG-Labs/datadog-101-docker
+```
