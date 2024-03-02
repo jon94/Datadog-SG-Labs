@@ -41,14 +41,18 @@ cd Datadog-SG-Labs/datadog-101-docker
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/fdbf45c0-e269-4440-b323-ea2b17e0c3e4)
 
 ### 5. Using API Key from step (2)
-![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/7c81442b-3379-417d-892d-56e24a8e0e73)
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+```
+# Replace "your_actual_api_key" with your actual API key in docker-compose.yaml
+api_key="your_actual_api_key"
+sed -i 's/YOUR API KEY/'"$api_key"'/g' docker-compose.yaml
 
-![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/e64a69f5-2209-49de-96aa-d2d8178bb35e)
-
-![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/2bc2f953-ef2d-4200-a068-4e2afeece804)
+# Replace 'YOUR API KEY' with your actual API key in the rest of the required files
+find . -type f -exec sed -i 's/YOUR_API_KEY/'"$api_key"'/g' {} +
+```
 
 ### 6. Start the containers
-- Make sure you are in the correct directory - root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
 ```
 docker compose up -d --force-recreate --no-deps --build
 ```
@@ -65,9 +69,15 @@ docker ps -a
 
 ### 8. Create Monitors on Datadog
 - [Create](https://docs.datadoghq.com/account_management/api-app-keys/#add-application-keys) an application key in Datadog UI. We will need this for this step.
+```
+# Replace "your_actual_app_key" with your actual API key in docker-compose.yaml
+
+app_key="your_actual_app_key"
+find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
+```
 
 ### 9. Generate load to the application and observe traces
-- Make sure you are in the correct directory - root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
 
 - There are 2 endpoints.
   - HelloWorld >> localhost:5000/hello
