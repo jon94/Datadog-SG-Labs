@@ -146,6 +146,10 @@ chmod +x run_script.sh
   ```
 
 **Configure Webhook Integration**
+
+Grant the correct application key scope
+<img width="996" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/219b7a1e-67c8-455c-8912-7ec90a9b35fc">
+
 <img width="994" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/ca7c2cd7-fc3d-4e4e-bcbf-a31b9d19fd1f">
 
 <img width="998" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/48c0a1ff-2e1a-4412-85a5-210b5a3e26b1">
