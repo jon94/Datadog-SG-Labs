@@ -111,9 +111,10 @@ chmod +x run_script.sh
 ### BONUS
 #### Category: Monitors
 **Task 1: How do you alert different members based on the status of the monitor?**
+
 [Hint] (https://docs.datadoghq.com/monitors/notify/variables/?tab=is_alert#conditional-variables)
 <details>
-<summary>Click to toggle contents of `Task 1`</summary>
+<summary>Click to toggle for `Task 1`</summary>
   
    ```
   {{#is_alert}}
@@ -127,4 +128,26 @@ chmod +x run_script.sh
 
 </details>
 
-**Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?**
+**Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors such that simulate_errors service monitor will not be called?**
+
+[Hint] (https://docs.datadoghq.com/monitors/guide/create-monitor-dependencies/)
+- Follow along the idea in the document above. The endpoints in the documents are outdated. But you can use docs on [API Reference] (https://docs.datadoghq.com/api/latest/#api-reference)
+<details>
+<summary>Click to toggle for `Task 2`</summary>
+  
+  ```
+  {{#is_alert}} 
+  high error rate on {{service.name}} on {{env.name}}. Proceeding to mute downstream service (simulate_error) @webhook-mute-simulateerror
+  {{/is_alert}}
+
+  {{#is_alert_recovery}} 
+  alert recovered. Proceeding to unmute downstream service (simulate_error) @webhook-unmute-simulateerror
+  {{/is_alert_recovery}}
+  ```
+
+**Configure Webhook Integration**
+<img width="994" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/ca7c2cd7-fc3d-4e4e-bcbf-a31b9d19fd1f">
+
+<img width="998" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/48c0a1ff-2e1a-4412-85a5-210b5a3e26b1">
+
+</details>
