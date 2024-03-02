@@ -64,6 +64,7 @@ docker ps -a
 <img width="1040" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/48cd289a-74e6-45c3-9f27-f9c0ddf9d8d9">
 
 ### 8. Create Monitors on Datadog
+- [Create](https://docs.datadoghq.com/account_management/api-app-keys/#add-application-keys) an application key in Datadog UI. We will need this for this step.
 
 ### 9. Generate load to the application and observe traces
 - Make sure you are in the correct directory - root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
