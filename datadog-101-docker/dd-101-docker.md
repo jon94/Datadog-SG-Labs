@@ -32,7 +32,7 @@
 ### 4. Clone this repo and change directory
 #### Checkpoint: Start from here if lab times out.
 ```
-root@agent-docker-lab-host:~/lab cd
+cd
 
 git clone https://github.com/jon94/Datadog-SG-Labs.git
 
