@@ -1,6 +1,7 @@
 from datadog import initialize, statsd
 from flask import Flask
 from werkzeug.utils import url_quote
+from ddtrace import tracer, patch
 import os
 
 # Initialize Datadog
@@ -21,6 +22,8 @@ def hello():
 
 # Define error simulation endpoint
 @app.route('/simulate_error')
+# custom instrumentation python
+@tracer.wrap(service="simulate_error", resource="simulate_error")
 def simulate_error():
     try:
         # Simulate an error by dividing by zero
