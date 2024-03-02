@@ -1,13 +1,13 @@
 import requests
 import json
 
-api_key = 'YOUR_API_KEY'
-app_key = 'YOUR_APP_KEY'
+# api_key = 'YOUR_API_KEY'
+# app_key = 'YOUR_APP_KEY'
 
 headers = {
     'Content-Type': 'application/json',
-    'DD-API-KEY': api_key,
-    'DD-APPLICATION-KEY': app_key,
+    'DD-API-KEY': 'YOUR_API_KEY'
+    'DD-APPLICATION-KEY': 'YOUR_APP_KEY'
 }
 
 monitor_payload = {
