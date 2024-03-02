@@ -48,12 +48,13 @@ cd Datadog-SG-Labs/datadog-101-docker
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/2bc2f953-ef2d-4200-a068-4e2afeece804)
 
 ### 6. Start the containers
+- Make sure you are in the correct directory - root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
 ```
-root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker# docker compose up -d --force-recreate --no-deps --build
+docker compose up -d --force-recreate --no-deps --build
 ```
 - Check that the containers are up and running
 ```
-root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker# docker ps -a
+docker ps -a
 ```
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/54d1442f-e9a6-4521-8161-fcdbcd9b6a97)
 
