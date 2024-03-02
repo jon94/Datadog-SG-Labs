@@ -107,3 +107,9 @@ chmod +x run_script.sh
 
 ./run_script.sh
 ```
+
+### BONUS
+#### Category: Monitors
+Task 1: How do you alert different members based on the status of the monitor?
+
+Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors?
