@@ -78,6 +78,10 @@ docker ps -a
 app_key="your_actual_app_key"
 find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
 ```
+```
+chmod +x create_monitor.sh
+./create_monitor.sh
+```
 
 ### 9. Generate load to the application and observe traces
 - Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
