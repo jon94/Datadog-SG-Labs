@@ -114,11 +114,13 @@ docker ps -a
 <details>
 <summary>Click to toggle for more info</summary>
 
-- [Create](https://docs.datadoghq.com/account_management/api-app-keys/#add-application-keys) an application key in Datadog UI. We will need this for this step.
-
 **Task 1: Create an Application Key in Datadog**
 <details>
 <summary>Click to toggle for more info</summary>
+
+- [Create](https://docs.datadoghq.com/account_management/api-app-keys/#add-application-keys) an application key in Datadog UI. We will need this for this step.
+
+- Proceed to next step after application key is created
   
 ```
 # Replace "your_actual_app_key" with your actual APP key in docker-compose.yaml
