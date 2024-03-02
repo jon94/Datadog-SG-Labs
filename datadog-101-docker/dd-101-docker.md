@@ -170,7 +170,7 @@ chmod +x run_script.sh
 ```
 </details>
 
-### BONUS
+### Monitor Deep Dive
 #### Category: Monitors
 **Task 1: How do you alert different members based on the status of the monitor?**
 
@@ -190,7 +190,7 @@ chmod +x run_script.sh
 
 </details>
 
-**Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors such that simulate_errors service monitor will not be called?**
+**Task 2: Your team wants better control of alerts, since simulate_error is invoked by flask-dd-labs, how can you create dependencies between the monitors such that when flask-dd-labs has an alert, simulate_errors service monitor will not be called?**
 
 [Hint] (https://docs.datadoghq.com/monitors/guide/create-monitor-dependencies/)
 - Follow along the idea in the document above. The endpoints in the documents are outdated. But you can use docs on [API Reference] (https://docs.datadoghq.com/api/latest/#api-reference)
@@ -222,3 +222,5 @@ To unmute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/unmute?a
 <img width="998" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/48c0a1ff-2e1a-4412-85a5-210b5a3e26b1">
 
 </details>
+
+**Task 3: You learnt how to mute individual monitors, what if the downstream service has many monitors? How can you mute all monitors belonging to service:simulate_error?**
