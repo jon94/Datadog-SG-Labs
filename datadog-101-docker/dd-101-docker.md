@@ -16,6 +16,11 @@
   - **Application Performance Monitoring**
     - Installing the Datadog APM Library in Dockerfile
     - Automatic Instrumentation with Python using ddtrace-run
+  - **Monitors, Alerts, Notifications**
+    - Threshold Monitor using APM Metrics
+      - Understand how to edit monitors
+    - Monitor Variables, Notifications  
+    - Monitor Dependencies and Datadog API  
 
 ## How to use this?
 ### 1. Start the Lab
