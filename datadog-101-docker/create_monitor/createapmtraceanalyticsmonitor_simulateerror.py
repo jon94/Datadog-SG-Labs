@@ -14,7 +14,7 @@ monitor_payload = {
     "name": "[APM Trace Analytics Monitor] simulation_error service",
     "type": "trace-analytics alert",
     "query": "trace-analytics(\"service:simulate_error resource_name:simulate_error env:dd-sg-lab status:error\").rollup(\"count\").last(\"5m\") > 20",
-    "message": "Alert! High Error on resource {{span.resource_name}} in env {{span.env}} @jonathan.lim@datadoghq.com",
+    "message": "Alert! High Error on resource {{span.resource_name}} in env {{span.env}} ,
     "tags": [
         "service:simulate_error",
         "env:dd-sg-lab"
