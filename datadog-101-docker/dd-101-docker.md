@@ -69,6 +69,9 @@ docker ps -a
 
 ### 8. Create Monitors on Datadog
 - [Create](https://docs.datadoghq.com/account_management/api-app-keys/#add-application-keys) an application key in Datadog UI. We will need this for this step.
+
+**Task 1: Create an Application Key in Datadog**
+  
 ```
 # Replace "your_actual_app_key" with your actual APP key in docker-compose.yaml
 
