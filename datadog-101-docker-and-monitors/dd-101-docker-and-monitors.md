@@ -1,4 +1,4 @@
-# Datadog-101-Docker
+# Datadog-101-Docker-And-Monitors
 
 ## Pre-requisites 
 - Account with learn.datadoghq.com
