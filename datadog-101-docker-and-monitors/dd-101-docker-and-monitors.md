@@ -188,7 +188,7 @@ chmod +x run_script.sh
 ```
 </details>
 
-### Monitor Deep Dive
+### Bonus: Monitor Deep Dive
 
 <details>
 <summary>Click to toggle for `Tasks in Monitor Deep Dive`</summary>
