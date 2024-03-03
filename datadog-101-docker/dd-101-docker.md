@@ -249,48 +249,85 @@ To unmute monitor: https://api.datadoghq.com/api/v1/monitor/<monitorid>/unmute?a
 <details>
 <summary>Click to toggle for `Task 3`</summary>
 
-[Hint] (https://docs.datadoghq.com/monitors/downtimes/)
+[Hint 1] (https://docs.datadoghq.com/monitors/downtimes/) and [Hint 2] (https://docs.datadoghq.com/service_management/workflows/)
 
-In order to use the api, you have to give the correct scope on your application key (monitor_downtime).
+- In order to use the api, you have to give the correct scope on your application key (monitor_downtime).
+- Webhook integrations are for basic API calls, but what if you need to draw values from different endpoints? For more complicated scenarios like this, Datadog Workflow Automation is an excellent solution. 
 
 <img width="984" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/d6f827c0-84c3-4399-ab05-bf2e1510ede8">
 
 ```
 {{#is_alert}} 
-high error rate on {{service.name}} on {{env.name}}. Proceeding to mute all alerts related to service:simulate_error @webhook-mute-ALL-simulateerror 
+high error rate on {{service.name}} on {{env.name}}. Proceeding to mute all alerts related to service:simulate_error @workflow-mute-all-simulate_error 
 {{/is_alert}}
 
 {{#is_alert_recovery}} 
-alert recovered. Proceeding to unmute all alerts related to service:simulate_error @webhook-unmute-ALL-simulateerror 
+alert recovered. Proceeding to unmute all alerts related to service:simulate_error @workflow-unmute-all-simulate_error 
 {{/is_alert_recovery}}
 ```
 
-```
-https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=
-```
+## Mute all monitor based on monitor tags
+
+<img width="1351" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/65951496-2e04-4374-bb7f-ac07a57e40ab">
+
+## Unmute all monitor based on monitor tags
+
+<img width="1349" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/a4215988-1ed1-4671-ab85-7949ccda6875">
+
+### Get Active Downtime
+
+- This displays all active downtime at the time of API call
 
 ```
-{
-  "data": {
-    "attributes": {
-      "message": "mute all service:simulate_error",
-      "monitor_identifier": {
-        "monitor_tags": [
-          "service:simulate_error",
-          "env:dd-sg-lab"
-        ]
-      },
-      "scope": "*",
-      "schedule": {
-        "start": null
+https://api.datadoghq.com/api/v2/downtime?api_key=&application_key=&current_only=true
+```
+### Extract downtime id if env and service matches
+
+- targetTags are defined in the JS code. This will extract the downtime id required for the cancel downtime API later.
+
+```
+var jsonData = $.Steps.Get_Active_Downtime.body;
+
+var targetTags = ["env:dd-sg-lab", "service:simulate_error"];
+var extractedIds = [];
+
+// Check if jsonData and jsonData.data are defined
+if (jsonData && jsonData.data && Array.isArray(jsonData.data)) {
+  // Iterate through the data array
+  for (var i = 0; i < jsonData.data.length; i++) {
+    var entry = jsonData.data[i];
+
+    // Check if entry, attributes, and monitor_tags exist
+    if (
+      entry &&
+      entry.attributes &&
+      entry.attributes.monitor_identifier &&
+      entry.attributes.monitor_identifier.monitor_tags
+    ) {
+      // Check if monitor_tags array includes all targetTags
+      var hasAllTags = targetTags.every(function(tag) {
+        return entry.attributes.monitor_identifier.monitor_tags.includes(tag);
+      });
+
+      // If all targetTags are present, push the id to the extractedIds array
+      if (hasAllTags) {
+        extractedIds.push(entry.id);
       }
-    },
-    "type": "downtime"
+    }
   }
 }
-```
-<img width="986" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/14da1508-43e1-4267-80d9-8854f24427cf">
 
-</details>
+// Return the extracted IDs
+return {
+  extractedIds: Array.isArray(extractedIds) ? extractedIds : [extractedIds]
+}
+```
+### Cancel Downtime API
+
+- Downtime ID is obtained from earlier step and the Cancel Downtime API is called.
+
+```
+DELETE https://api.datadoghq.com/api/v2/downtime/{{ Steps.extract_id_if_env_and_service_match.data.extractedIds.[0] }}?api_key=&application_key=
+```
 
 </details>
