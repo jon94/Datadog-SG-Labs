@@ -20,7 +20,9 @@
     - Threshold Monitor using APM Metrics
       - Understand how to edit monitors
     - Monitor Variables, Notifications  
-    - Set up Monitor Dependencies and Datadog API  
+    - Set up dependencies between Monitors and Datadog API
+  - **Datadog Workflow Automation**
+    - Familiar with Datadog Workflow Automation  
 
 ## How to use this?
 ### 1. Start the Lab
