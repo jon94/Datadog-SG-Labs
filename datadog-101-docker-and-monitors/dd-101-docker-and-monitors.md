@@ -71,7 +71,7 @@ cd Datadog-SG-Labs/datadog-101-docker-and-monitors
 ### 5. Using API Key from step (2)
 <details>
 <summary>Click to toggle for more info</summary>
-- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker-and-monitors
   
 ```
 # Replace "your_actual_api_key" with your actual API key in docker-compose.yaml
@@ -85,7 +85,7 @@ find . -type f -exec sed -i 's/YOUR_API_KEY/'"$api_key"'/g' {} +
 <details>
 <summary>Click to toggle for more info</summary>
 
-- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker-and-monitors
 ```
 docker compose up -d --force-recreate --no-deps --build
 ```
@@ -111,7 +111,7 @@ docker ps -a
 <details>
 <summary>Click to toggle for more info</summary>
   
-- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker-and-monitors
 
 - There are 2 endpoints.
   - HelloWorld >> localhost:5000/hello
