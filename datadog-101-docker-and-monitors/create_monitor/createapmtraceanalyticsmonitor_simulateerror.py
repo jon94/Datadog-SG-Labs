@@ -19,7 +19,7 @@ monitor_payload = {
         "service:simulate_error",
         "env:dd-sg-lab"
     ],
-    "options": {2
+    "options": {
         "thresholds": {
             "critical": 20
         },
