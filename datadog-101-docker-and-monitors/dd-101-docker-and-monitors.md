@@ -107,7 +107,23 @@ docker ps -a
 
 </details>
 
-### 8. Create Monitors on Datadog
+### 8. Generate load to the application and observe traces
+<details>
+<summary>Click to toggle for more info</summary>
+  
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
+
+- There are 2 endpoints.
+  - HelloWorld >> localhost:5000/hello
+  - Simulate Error >> localhost:5000/simulate_error
+```
+chmod +x run_script.sh 
+
+./run_script.sh
+```
+</details>
+
+### 9. Create Monitors on Datadog
 <details>
 <summary>Click to toggle for more info</summary>
 
@@ -165,22 +181,6 @@ chmod +x create_monitor.sh
     
 </details>
 
-</details>
-
-### 9. Generate load to the application and observe traces
-<details>
-<summary>Click to toggle for more info</summary>
-  
-- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker
-
-- There are 2 endpoints.
-  - HelloWorld >> localhost:5000/hello
-  - Simulate Error >> localhost:5000/simulate_error
-```
-chmod +x run_script.sh 
-
-./run_script.sh
-```
 </details>
 
 ### Bonus: Monitor Deep Dive
