@@ -62,7 +62,7 @@ cd
 
 git clone https://github.com/jon94/Datadog-SG-Labs.git
 
-cd Datadog-SG-Labs/datadog-101-docker
+cd Datadog-SG-Labs/datadog-101-docker-and-monitors
 ```
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/fdbf45c0-e269-4440-b323-ea2b17e0c3e4)
 
