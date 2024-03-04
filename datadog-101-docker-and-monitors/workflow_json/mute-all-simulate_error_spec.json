@@ -1,0 +1,29 @@
+{
+    "steps": [
+        {
+            "actionId": "com.datadoghq.dd.downtime.scheduleDowntime",
+            "display": {
+                "bounds": {
+                    "y": 186
+                }
+            },
+            "name": "Schedule_Downtime",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "value": [
+                        "*"
+                    ]
+                },
+                {
+                    "name": "monitor_tags",
+                    "value": [
+                        "service:simulate_error",
+                        "env:dd-sg-lab"
+                    ]
+                }
+            ]
+        }
+    ],
+    "startStepName": "Schedule_Downtime"
+}

@@ -1,0 +1,70 @@
+{
+    "steps": [
+        {
+            "actionId": "com.datadoghq.http.request",
+            "display": {
+                "bounds": {
+                    "y": 186
+                }
+            },
+            "name": "Get_Active_Downtime",
+            "outboundEdges": [
+                {
+                    "branchName": "main",
+                    "nextStepName": "extract_id_if_env_and_service_match"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "verb",
+                    "value": "GET"
+                },
+                {
+                    "name": "url",
+                    "value": "https://api.datadoghq.com/api/v2/downtime?api_key=YOUR_API_KEY&application_key=YOUR_APP_KEY&current_only=true"
+                }
+            ]
+        },
+        {
+            "actionId": "com.datadoghq.datatransformation.func",
+            "display": {
+                "bounds": {
+                    "y": 389
+                }
+            },
+            "name": "extract_id_if_env_and_service_match",
+            "outboundEdges": [
+                {
+                    "branchName": "main",
+                    "nextStepName": "cancel_downtime"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "script",
+                    "value": "var jsonData = $.Steps.Get_Active_Downtime.body;\n\nvar targetTags = [\"env:dd-sg-lab\", \"service:simulate_error\"];\nvar extractedIds = [];\n\n// Check if jsonData and jsonData.data are defined\nif (jsonData && jsonData.data && Array.isArray(jsonData.data)) {\n  // Iterate through the data array\n  for (var i = 0; i < jsonData.data.length; i++) {\n    var entry = jsonData.data[i];\n\n    // Check if entry, attributes, and monitor_tags exist\n    if (\n      entry &&\n      entry.attributes &&\n      entry.attributes.monitor_identifier &&\n      entry.attributes.monitor_identifier.monitor_tags\n    ) {\n      // Check if monitor_tags array includes all targetTags\n      var hasAllTags = targetTags.every(function(tag) {\n        return entry.attributes.monitor_identifier.monitor_tags.includes(tag);\n      });\n\n      // If all targetTags are present, push the id to the extractedIds array\n      if (hasAllTags) {\n        extractedIds.push(entry.id);\n      }\n    }\n  }\n}\n\n// Return the extracted IDs\nreturn {\n  extractedIds: Array.isArray(extractedIds) ? extractedIds : [extractedIds]\n}"
+                }
+            ]
+        },
+        {
+            "actionId": "com.datadoghq.http.request",
+            "display": {
+                "bounds": {
+                    "y": 575
+                }
+            },
+            "name": "cancel_downtime",
+            "parameters": [
+                {
+                    "name": "verb",
+                    "value": "DELETE"
+                },
+                {
+                    "name": "url",
+                    "value": "https://api.datadoghq.com/api/v2/downtime/{{ Steps.extract_id_if_env_and_service_match.data.extractedIds.[0] }}?api_key=YOUR_API_KEY&application_key=YOUR_APP_KEY"
+                }
+            ]
+        }
+    ],
+    "startStepName": "Get_Active_Downtime"
+}
