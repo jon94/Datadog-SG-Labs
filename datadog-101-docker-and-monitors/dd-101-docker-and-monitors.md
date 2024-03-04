@@ -76,11 +76,6 @@ cd Datadog-SG-Labs/datadog-101-docker-and-monitors
 ```
 # Replace "your_actual_api_key" with your actual API key in docker-compose.yaml
 api_key="your_actual_api_key"
-sed -i 's/YOUR API KEY/'"$api_key"'/g' docker-compose.yaml
-```
-
-```  
-# Replace 'YOUR API KEY' with your actual API key in the rest of the required files
 find . -type f -exec sed -i 's/YOUR_API_KEY/'"$api_key"'/g' {} +
 ```
 
