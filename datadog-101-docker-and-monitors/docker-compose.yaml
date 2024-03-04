@@ -23,7 +23,7 @@ services:
     environment:
       DD_APM_ENABLED: "true"
       DD_APM_NON_LOCAL_TRAFFIC: "true"
-      DD_API_KEY: 'YOUR API KEY'
+      DD_API_KEY: YOUR_API_KEY
       DD_PROCESS_AGENT_ENABLED: "true"
       DD_DOGSTATSD_NON_LOCAL_TRAFFIC: "true"
     ports:
