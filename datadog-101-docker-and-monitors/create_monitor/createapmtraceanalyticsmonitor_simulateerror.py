@@ -31,3 +31,10 @@ monitor_payload = {
 }
 
 url = 'https://api.datadoghq.com/api/v1/monitor'
+
+try:
+    response = requests.post(url, headers=headers, data=json.dumps(monitor_payload))
+    response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+    print(f"Monitor creation successful! Response: {response.text}")
+except requests.exceptions.RequestException as e:
+    print(f"Error creating monitor: {e}")
