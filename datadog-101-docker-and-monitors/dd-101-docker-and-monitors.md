@@ -68,20 +68,40 @@ cd Datadog-SG-Labs/datadog-101-docker-and-monitors
 
 </details>
 
-### 5. Using API Key from step (2)
+### 5. API Keys
 <details>
 <summary>Click to toggle for more info</summary>
 - Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker-and-monitors
   
+
+**Replace "your_actual_api_key" with your actual API key in docker-compose.yaml**
+
 ```
-# Replace "your_actual_api_key" with your actual API key in docker-compose.yaml
 api_key="your_actual_api_key"
 find . -type f -exec sed -i 's/YOUR_API_KEY/'"$api_key"'/g' {} +
 ```
 
 </details>
 
-### 6. Start the containers
+### 6. Application Keys
+<details>
+<summary>Click to toggle for more info</summary>
+- Grant the correct scope to the application key. (monitors_read, monitors_write, monitors_downtime)
+
+<img width="537" alt="image" src="https://github.com/jon94/Datadog-SG-Labs/assets/40360784/d33e17ed-dd5f-4e17-be53-33a5736d27b8">
+
+- Make sure you are in the correct directory >> root@agent-docker-lab-host:~/Datadog-SG-Labs/datadog-101-docker-and-monitors
+
+**Replace "your_actual_app_key" with your actual APP key in files**
+
+```
+app_key="your_actual_app_key"
+find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
+```
+
+</details>
+
+### 7. Start the containers
 <details>
 <summary>Click to toggle for more info</summary>
 
@@ -97,7 +117,7 @@ docker ps -a
 
 </details>
 
-### 7. Explore Infra using Live Containers on Datadog
+### 8. Explore Infra using Live Containers on Datadog
 <details>
 <summary>Click to toggle for more info</summary>
   
@@ -107,7 +127,7 @@ docker ps -a
 
 </details>
 
-### 8. Generate load to the application and observe traces
+### 9. Generate load to the application and observe traces
 <details>
 <summary>Click to toggle for more info</summary>
   
@@ -123,33 +143,17 @@ chmod +x run_script.sh
 ```
 </details>
 
-### 9. Create Monitors on Datadog
+### 10. Create Monitors on Datadog
 <details>
 <summary>Click to toggle for more info</summary>
 
-**Task 1: Create an Application Key in Datadog**
-<details>
-<summary>Click to toggle for more info</summary>
-
-- [Create](https://docs.datadoghq.com/account_management/api-app-keys/#add-application-keys) an application key in Datadog UI. We will need this for this step.
-
-- Proceed to next step after application key is created
-  
-```
-# Replace "your_actual_app_key" with your actual APP key in docker-compose.yaml
-
-app_key="your_actual_app_key"
-find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
-```
 ```
 chmod +x create_monitor.sh
 ./create_monitor.sh
 ```
 ![image](https://github.com/jon94/Datadog-SG-Labs/assets/40360784/4fa64f28-0c21-4578-9029-94abc45157f2)
 
-</details>
-
-**Task 2: Edit the created monitor to shorten the evaluation time**
+**Task 1: Edit the created monitor to shorten the evaluation time**
 <details>
 <summary>Click to toggle for more info</summary>
   
@@ -157,7 +161,7 @@ chmod +x create_monitor.sh
 
 </details>
 
-**Task 3: Based on the threshold monitor, create a similar one for simulate_error service**
+**Task 2: Based on the threshold monitor, create a similar one for simulate_error service**
 <details>
 <summary>Click to toggle for more info</summary>
   
@@ -170,7 +174,7 @@ chmod +x create_monitor.sh
     
 </details>
 
-**Task 4: Instead of creating a monitor based on metrics, create a monitor using APM Trace Analytics. This monitor should monitor service:flask-dd-lab in env:dd-sg-lab. Trigger an Alert when the count of error spans is > 20.**
+**Task 3: Instead of creating a monitor based on metrics, create a monitor using APM Trace Analytics. This monitor should monitor service:flask-dd-lab in env:dd-sg-lab. Trigger an Alert when the count of error spans is > 20.**
 
 [Hint](https://app.datadoghq.com/monitors/manage?order=desc) You should see 2 monitors created. Refer to one of them as an example.
 
