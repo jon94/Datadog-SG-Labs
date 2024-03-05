@@ -78,6 +78,8 @@ cd Datadog-SG-Labs/datadog-101-docker-and-monitors
 
 ```
 api_key="your_actual_api_key"
+```
+```
 find . -type f -exec sed -i 's/YOUR_API_KEY/'"$api_key"'/g' {} +
 ```
 
@@ -96,6 +98,8 @@ find . -type f -exec sed -i 's/YOUR_API_KEY/'"$api_key"'/g' {} +
 
 ```
 app_key="your_actual_app_key"
+```
+```
 find . -type f -exec sed -i 's/YOUR_APP_KEY/'"$app_key"'/g' {} +
 ```
 
